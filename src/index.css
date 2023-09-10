@@ -2,5 +2,26 @@
   width: 20%;
 }
 .bt{
-  
+
+}
+.card{
+  width: 100px;
+  height: 350px;
+  margin-top: 80px;
+  /* margin-left: 200px; */
+}
+.card-img-top{
+  height: 280px;
+  margin-left: 70px;
+}
+.btn-primary{
+  margin-left: 40px;
+}
+.form-control{
+  margin-left: 420px;
+  margin-top: 20px;
+}
+.btn-danger{
+  margin-left: 680px;
+  margin-top: -66px;
 }

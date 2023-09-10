@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ReactSearchBox from "react-search-box";
 
-
 const Demo = () => {
   const [user, setUser] = useState();
-  const [search,setSearch]=useState();
+  const [search, setSearch] = useState();
 
   const getApi = async () => {
-    const baseUrl ="https://api.punkapi.com/v2/beers";
+    const baseUrl = "https://api.punkapi.com/v2/beers";
     const res = await axios.get(`${baseUrl}`);
     setUser(res?.data);
   };
@@ -18,23 +17,24 @@ const Demo = () => {
   console.log(user);
 
   const submit = async () => {
-   // const baseUrl ="https://api.punkapi.com/v2/beers";
-   const res = await axios.get(`https://api.punkapi.com/v2/beers/${search}`);
-   setUser(res?.data);
-   console.log("data+++",res.data);
- };
+    // const baseUrl ="https://api.punkapi.com/v2/beers";
+    const res = await axios.get(`https://api.punkapi.com/v2/beers/${search}`);
+    setUser(res?.data);
+    console.log("data+++", res.data);
+  };
 
   return (
     <>
-     <div className="ss">
-     <input
-            type="Address"
-            className="form-control"
-            placeholder="Search here"
-            value={search}
-            onChange={(e)=>setSearch(e.target.value)}
-          />
-        <button className="bt" onClick={submit}>Search</button>
+      <div className="ss">
+        <input
+          type="Address"
+          className="form-control"
+          placeholder="Search here"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      
+        <button type="button" class="btn btn-danger" onClick={submit}>Search</button>
       </div>
       <div class="container">
         <div class="row">
@@ -46,10 +46,7 @@ const Demo = () => {
                   <div className="card" style={{ width: "15rem" }}>
                     <img src={item.image_url} className="card-img-top" style={{ width: "100px" }}/>
                     <div className="card-body">
-                      <h5 className="card-title">ID: {item.id}</h5>
-                      <a href="#" className="btn btn-primary">
-                        Go somewhere
-                      </a>
+                      <button type="button" class="btn btn-primary">PRODUCT ID: {item.id}</button>
                     </div>
                   </div>
                 </div>
@@ -58,7 +55,10 @@ const Demo = () => {
           })}
         </div>
       </div>
-    </>
+
+              </>
+   
+  
   );
 };
 
